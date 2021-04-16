@@ -17,7 +17,7 @@ def _main(city):
 
     weather_params = {
         "lat": city["lat"],
-        "lon": city["long"],
+        "lon": city["lon"],
         "appid": config.api_key,
         "exclude": "current,minutely"
     }
@@ -33,7 +33,7 @@ def _main(city):
     for hour in weather_data["hourly"][:23]:
         if hour["weather"][0]["id"] < 700:
             will_rain = True
-            rain_hour = (7 + counter) % 24
+            rain_hour = (datetime.datetime.now().hour + counter) % 24
             if rain_hour < 10:
                 rain_hour = f"0{rain_hour}.00"
             else:
@@ -45,14 +45,14 @@ def _main(city):
     night_temp = round(weather_data["daily"][0]["temp"]["night"] - 273)
     if will_rain:
         weather_message = f"""
-            {city}
+            {city["name"]}
             Температура днем: {day_temp}°C
             Температура ночью: {night_temp}°C
             Ожидается дождь в {rain_hours} часов
             """
     else:
         weather_message = f"""
-            {city}
+            {city["name"]}
             Температура днем: {day_temp}°C
             Температура ночью: {night_temp}°C
             Дождь не ожидается
