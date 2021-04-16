@@ -29,7 +29,7 @@ def _main(city):
     response = requests.get(owm_endpoint,params=weather_params)
     response.raise_for_status()
     weather_data = response.json()
-
+    
     for hour in weather_data["hourly"][:23]:
         if hour["weather"][0]["id"] < 700:
             will_rain = True
