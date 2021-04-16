@@ -43,11 +43,13 @@ def _main(city):
 
     day_temp = round(weather_data["daily"][0]["temp"]["day"] - 273)
     night_temp = round(weather_data["daily"][0]["temp"]["night"] - 273)
+    wind_speed = weather_data["daily"][0]["wind_speed"]
     if will_rain:
         weather_message = f"""
             {city["name"]}
             Температура днем: {day_temp}°C
             Температура ночью: {night_temp}°C
+            Cкорость ветра: до {wind_speed}м/с
             Ожидается дождь в {rain_hours} часов
             """
     else:
@@ -55,6 +57,7 @@ def _main(city):
             {city["name"]}
             Температура днем: {day_temp}°C
             Температура ночью: {night_temp}°C
+            Cкорость ветра: до {wind_speed}м/с
             Дождь не ожидается
             """
     bot.send_message(config.chat_id, weather_message)
