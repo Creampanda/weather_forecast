@@ -76,10 +76,10 @@ def _main(city):
     plt.plot(x,weather_plot)
     plt.xlabel("Время")
     plt.ylabel("Градусы")
-    plt.savefig("./photo/pic.png")
+    plt.savefig("/root/scripts/weather_forecast/photo/pic.png")
 
-    bot.send_photo(config.chat_id, photo=open("./photo/pic.png","rb"), caption=weather_message )
-    os.remove("./photo/pic.png")
+    bot.send_photo(config.chat_id, photo=open("/root/scripts/weather_forecast/photo/pic.png","rb"), caption=weather_message )
+    os.remove("/root/scripts/weather_forecast/photo/pic.png")
 
 if __name__ == '__main__':
     import argparse
