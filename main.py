@@ -59,7 +59,7 @@ def _main(city):
             Температура днем: {day_temp}°C
             Температура ночью: {night_temp}°C
             Cкорость ветра: до {wind_speed}м/с
-            Рассвет/Закат: {sunrise}/{sunset} часов
+            Рассвет/Закат: {sunrise}/{sunset}
             Ожидается дождь в {rain_hours} часов
             """
     else:
@@ -68,7 +68,7 @@ def _main(city):
             Температура днем: {day_temp}°C
             Температура ночью: {night_temp}°C
             Cкорость ветра: до {wind_speed}м/с
-            Рассвет/Закат: {sunrise}/{sunset} часов
+            Рассвет/Закат: {sunrise}/{sunset}
             Дождь не ожидается
             """
 
